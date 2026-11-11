@@ -1,0 +1,24 @@
+name: Sample Forecast Experiment
+date_column: date
+target_column: sales_units
+group_columns:
+  - store_id
+  - item_id
+lags:
+  - 1
+  - 7
+features:
+  - price
+  - sales_units_lag_1
+  - sales_units_lag_7
+test_fraction: 0.2
+algorithms:
+  - name: Test Algorithm
+    estimator: LinearRegression
+    params: {}
+  - name: Test Algorithm
+    estimator: RandomForestRegressor
+    search_method: randomized_search
+    params: 
+      n_estimators: [100, 1000]
+      max_depth: [3, 10]
