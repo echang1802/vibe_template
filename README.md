@@ -1,1 +1,1 @@
-# vibe_template
+# Template repository
