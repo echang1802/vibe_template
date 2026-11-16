@@ -27,7 +27,7 @@ Each documented concern/suggestion must include:
 ## Concern and Suggestions Registry
 
 | ID | Concern | Date | Category | Severity | Branch | Status |
-|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|
 | C-0001 | Example Concern | 2026-11-12 | Validation | Medium | feature/task-manager | Open |
 | S-0001 | Example Suggestion | 2026-11-12 | Architecture | Low | feature/task-manager | Rejected |
 
