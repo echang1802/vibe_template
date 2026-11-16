@@ -25,7 +25,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.14"
           cache: pip
           cache-dependency-path: requirements.txt
 
@@ -40,7 +40,5 @@ jobs:
       - name: Check formatting (ruff)
         run: ruff format --check .
 
-      # "slow" is an example marker: declare it in pytest.ini.
-      # Remove the -m filter if you want every test to run in CI.
       - name: Run tests
         run: pytest --cov-fail-under=80

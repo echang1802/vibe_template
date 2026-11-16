@@ -1,0 +1,42 @@
+[tool.pytest.ini_options]
+pythonpath = ["."]
+addopts = "--cov=app --cov-report=term-missing"
+markers = [
+    "unit_test: mark a test as a unit test",
+    "integration_test: mark a test as an integration test",
+    "e2e_test: mark a test as an end-to-end test",
+]
+
+[tool.coverage.run]
+source = ["app"]
+omit = [
+    "*/__init__.py",
+    # "app/experiments/*",       # uncomment to exclude the sandbox from coverage
+]
+
+[tool.coverage.report]
+show_missing = true
+exclude_also = [
+    "if __name__ == .__main__.:",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"         # keep in sync with the Python version used in CI
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "I",    # import sorting
+    "B",    # likely bugs (flake8-bugbear)
+    "UP",   # modernize syntax
+    "SIM",  # simplifiable code
+    "C90",  # function complexity
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 8
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]             # allow `assert False` style checks in tests
