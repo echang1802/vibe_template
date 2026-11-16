@@ -26,7 +26,11 @@ Follow these guidelines when changing application code.
 - Use `PascalCase` for class names.
 - Add parameter and return type annotations. Use pandas and standard-library types explicitly whenever practical.
 - Provide concise docstrings for public functions and methods, describing their purpose and inputs or outputs when they are not self-explanatory.
-- Follow the surrounding formatting and import conventions. Keep comments limited to non-obvious reasoning.
+- Implement only the functionality explicitly requested by the user or strictly necessary to fulfill the request.
+- Do not introduce additional input validations, exception handling, retries, fallback mechanisms, or defensive programming unless explicitly requested or required for correctness.
+- Do not introduce unrelated refactoring, optimizations, or architectural changes.
+- Do not silently expand the implementation scope based on assumptions or personal preferences.
+- Follow existing repository conventions and mandatory security requirements.
 
 ## Validation and Completion
 
@@ -35,3 +39,8 @@ Follow these guidelines when changing application code.
 - Keep tests isolated. Use temporary paths for generated model artefacts when supported by the code, and do not leave test outputs in the repository.
 - Update the relevant README whenever usage, configuration, or setup instructions change.
 - Summarise the changed files and validation results. Ask before committing, and never commit until the required tests pass and the user confirms.
+
+## Identify and Document Concerns and Suggestions 
+
+- Instead of implement unrequested validation, defensive coding, etc. all this concerns must be documented in the `agents_comncerns_and_suggestions.md` document.
+- To include a concern or suggestion follow the templates used on the same document, it must be added in the table, and then the detailed registry.
