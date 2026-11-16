@@ -43,7 +43,7 @@ Each documented concern/suggestion must include:
 **Category:** Validation  
 **Severity:** Medium  
 **Status:** Open  
-**Location:** `app/experiments7main.py.py::Pipeline.train()` 
+**Location:** `app/experiments7main.py.py::Pipeline.train()`  
 **Concern:** Explain the concern in this section, with the potencial risk, suggested action and any decition made by the user.
 
 ### Suggestions
@@ -56,7 +56,7 @@ Each documented concern/suggestion must include:
 **Category:** Architecture  
 **Severity:** Low  
 **Status:** Rejected  
-**Location:** `app/experiments7main.py.py::Pipeline.train()` 
+**Location:** `app/experiments7main.py.py::Pipeline.train()`  
 **Suggestion:** Explain the Suggestion in this section, with the potencial impact, suggested action and any decition made by the user.
 
 
