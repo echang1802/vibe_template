@@ -8,7 +8,7 @@ import pandas as pd
 import yaml
 
 from app.experiments.feature_engineering import create_lag_features
-from app.experiments.training import train as train_model
+from app.experiments.training import train_model
 
 
 PROJECT_DIRECTORY = Path(__file__).resolve().parents[2]
@@ -86,10 +86,13 @@ class Pipeline:
         if missing_features:
             raise ValueError(f"Configured features were not found: {missing_features}")
 
-        algorithms = self.experiment.get("algorithms")
-        feature_matrix = self.input_data[configured_features].astype(float).values.tolist()
-        target_values = self.input_data[target_column].astype(float).tolist()
-        dates = self.input_data[date_column].astype(str).tolist()
+        algorithms = self.experiment["algorithms"]
+        feature_matrix = [
+            [float(value) for value in row]
+            for row in self.input_data[configured_features].values
+        ]
+        target_values = [float(value) for value in self.input_data[target_column]]
+        dates = [str(value) for value in self.input_data[date_column]]
         self.model = train_model(
             feature_matrix,
             target_values,

@@ -29,6 +29,7 @@ Each documented concern/suggestion must include:
 | ID | Concern | Date | Category | Severity | Branch | Status |
 |---|---|---|---|---|---|---|
 | C-0001 | Example Concern | 2026-11-12 | Validation | Medium | feature/task-manager | Open |
+| C-0002 | WAPE denominator can be zero | 2026-11-16 | Validation | Medium | feature/forecast-model-competition | Open |
 | S-0001 | Example Suggestion | 2026-11-12 | Architecture | Low | feature/task-manager | Rejected |
 
 ---
@@ -45,6 +46,17 @@ Each documented concern/suggestion must include:
 **Status:** Open  
 **Location:** `app/experiments7main.py.py::Pipeline.train()`  
 **Concern:** Explain the concern in this section, with the potencial risk, suggested action and any decition made by the user.
+
+#### C-0002 — WAPE denominator can be zero
+
+**Date:** 2026-11-16
+**Requested By:** @eloy.chang
+**Branch:** `feature/forecast-model-competition`
+**Category:** Validation
+**Severity:** Medium
+**Status:** Open
+**Location:** `app/experiments/metrics.py::wape()`
+**Concern:** WAPE is undefined when all actual values are zero, and the current calculation raises `ZeroDivisionError`. Agree on the expected policy for all-zero actuals before adding a special-case result.
 
 ### Suggestions
 
