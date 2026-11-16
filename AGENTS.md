@@ -4,10 +4,10 @@ This document defines a lightweight, test-first workflow for collaborating with 
 
 The guidelines are organized into specialized documents:
 
-- [`.github/agents-instructions.md`](.github/agents-instructions.md) defines the shared agent workflow and Git management rules.
+- [`.github/AGENTS.md`](.github/AGENTS.md) defines the shared agent workflow and Git management rules.
 - [`templates/user-story-template.md`](templates/user-story-template.md) provides a structured template for describing changes before implementation.
-- [`test/agents-instructions.md`](test/agents-instructions.md) defines testing guidelines, conventions, and frameworks.
-- [`app/agents-instructions.md`](app/agents-instructions.md) defines application-specific coding guidelines.
+- [`test/AGENTS.md`](test/AGENTS.md) defines testing guidelines, conventions, and frameworks.
+- [`app/AGENTS.md`](app/AGENTS.md) defines application-specific coding guidelines.
 - [`agents_concerns_and_suggestions.md`](agents_concerns_and_suggestions.md): Centralized log of concerns, potential risks, and improvement suggestions identified by AI agents during development.
 
 ## Workflow

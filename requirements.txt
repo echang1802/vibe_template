@@ -1,3 +1,5 @@
 scikit-learn
 pytest
+pytest-cov
 pandas
+PyYAML

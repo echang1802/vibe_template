@@ -1,20 +1,23 @@
+from datetime import datetime, timedelta
 from pathlib import Path
 
-import pytest
-import pandas as pd
-from datetime import datetime, timedelta
 import numpy as np
+import pandas as pd
+import pytest
+
 
 @pytest.fixture
 def sample_sales_data() -> pd.DataFrame:
     random_generator = np.random.default_rng(42)
-    foo = pd.DataFrame({
-        "date": [datetime(2026, 1, 1) + timedelta(days=i) for i in range(60)],
-        "store_id": ["store_001"] * 60,
-        "item_id": ["item_001"] * 60,
-        "price": random_generator.uniform(10.0, 20.0, size=60),
-        "sales_units": random_generator.integers(10, 15, size=60),
-    })
+    foo = pd.DataFrame(
+        {
+            "date": [datetime(2026, 1, 1) + timedelta(days=i) for i in range(60)],
+            "store_id": ["store_001"] * 60,
+            "item_id": ["item_001"] * 60,
+            "price": random_generator.uniform(10.0, 20.0, size=60),
+            "sales_units": random_generator.integers(10, 15, size=60),
+        }
+    )
     return foo
 
 
