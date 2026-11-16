@@ -6,7 +6,7 @@ import pandas as pd
 def create_lag_features(
     input_data: pd.DataFrame,
     date_column: str,
-    group_columns : list[str],
+    group_columns: list[str],
     target_column: str,
     lag: int,
 ) -> pd.DataFrame:
@@ -19,9 +19,9 @@ def create_lag_features(
         kind="stable",
     )
     if group_columns:
-        lagged_values = ordered_data.groupby(
-            group_columns, sort=False, dropna=False
-        )[target_column].shift(lag)
+        lagged_values = ordered_data.groupby(group_columns, sort=False, dropna=False)[
+            target_column
+        ].shift(lag)
     else:
         lagged_values = ordered_data[target_column].shift(lag)
 

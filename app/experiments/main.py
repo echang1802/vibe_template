@@ -10,7 +10,6 @@ import yaml
 from app.experiments.feature_engineering import create_lag_features
 from app.experiments.training import train_model
 
-
 PROJECT_DIRECTORY = Path(__file__).resolve().parents[2]
 EXPERIMENTS_DIRECTORY = Path(__file__).resolve().parent / "experiments"
 DATA_DIRECTORY = PROJECT_DIRECTORY / "app" / "data"
@@ -30,7 +29,7 @@ class Pipeline:
         """Load a YAML experiment by filename from the experiments directory."""
         self.experiment = {"readed": False}
 
-        experiment_path = (EXPERIMENTS_DIRECTORY / experiment_filename).resolve()        
+        experiment_path = (EXPERIMENTS_DIRECTORY / experiment_filename).resolve()
         if not experiment_path.is_file():
             return self.experiment
 
@@ -55,15 +54,15 @@ class Pipeline:
         date_column = self.experiment.get("date_column", "date")
         group_columns = self.experiment.get("group_columns", [])
         target_column = self.experiment.get("target_column", "sales_units")
-        
+
         lag_periods = self.experiment.get("lags", [1, 7])
 
         prepared_data = self.raw_data.copy()
         for lag_period in lag_periods:
             prepared_data = create_lag_features(
                 prepared_data,
-                date_column=date_column, 
-                group_columns = group_columns,
+                date_column=date_column,
+                group_columns=group_columns,
                 target_column=target_column,
                 lag=lag_period,
             )
