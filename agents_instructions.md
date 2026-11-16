@@ -35,12 +35,5 @@ The guidelines are organized into specialized documents:
 - Document input and output types using the conventions of the language in use.
 - Update the README when a change makes its existing guidance or usage information inaccurate or incomplete.
 
-## Agent guidelines files
-
-- [`app/agents-instructions.md`](app/agents-instructions.md) with coding guidelines and workflow.
-- [`test/agents-instructions.md`](test/agents-instructions.md) for the guideline to generate tests and the framework used.
-- [`.github/agents-instructions.md`](.github/agents-instructions.md) for the full agent workflow and Git branches management.
-- [`templates/user-story-template.md`](templates/user-story-template.md) User story template with required information to generate a new feature.
-- [`agents_concerns_and_suggestions.md`](agents_concerns_and_suggestions.md) to list all concern and suggestions generated while vibe coding.
 
 
